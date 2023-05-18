@@ -1,7 +1,6 @@
 package org.zinash.daos;
 
 import org.zinash.models.Car;
-import org.zinash.models.Person;
 import org.zinash.utils.ConnectionUtil;
 
 import java.sql.*;
@@ -198,7 +197,7 @@ public class CarDao implements CarDaoInterface {
 
             ResultSet rs = null;
 
-            String sql = "select * from cars join persons on cars.fkPersonid = " + "persons.personid where persons.firstname=?";
+            String sql = "select * from cars c join persons p on c.fkPersonid = " + "p.personid where p.firstname=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
